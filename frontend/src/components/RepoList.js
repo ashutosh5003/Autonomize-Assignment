@@ -19,7 +19,7 @@ function RepoList() {
   // Function to delete user data from the database
   const deleteUserData = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/users/${username}`);
+      await axios.delete(`https://autonomize-assignment-5ehv.onrender.com/api/users/${username}`);
       alert("User data deleted successfully");
       window.location.href = '/';
     } catch (err) {
@@ -32,7 +32,7 @@ function RepoList() {
     // Save user data to DB
     const saveUserToDB = async (userData) => {
       try {
-        await axios.post("http://localhost:5000/api/users", userData);
+        await axios.post("https://autonomize-assignment-5ehv.onrender.com/api/users", userData);
       } catch (error) {
         console.error("Error saving user data to DB:", error);
       }
