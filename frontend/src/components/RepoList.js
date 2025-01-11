@@ -3,6 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import './RepoList.css';
 import axios from "axios";
 
+
 function RepoList() {
   const { username } = useParams();
   const [userInfo, setUserInfo] = useState(null);
@@ -13,9 +14,8 @@ function RepoList() {
   const [showFollowersModal, setShowFollowersModal] = useState(false);
   const [showFollowingModal, setShowFollowingModal] = useState(false);
 
-  // Your GitHub Personal Access Token (replace with your actual token)
-  const githubToken = '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';
-
+  const githubToken = process.env.REACT_APP_GITHUB_TOKEN;
+  console.log(process.env.REACT_APP_GITHUB_TOKEN);
   // Function to delete user data from the database
   const deleteUserData = async () => {
     try {
